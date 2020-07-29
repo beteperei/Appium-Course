@@ -8,15 +8,20 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class Base {
-    public static AndroidDriver<AndroidElement> Capabilities() throws MalformedURLException {
+    public static AndroidDriver<AndroidElement> Capabilities(String device) throws MalformedURLException {
 
         File f =new File("src");
         File fs = new File(f,"ApiDemos-debug.apk");
-        String emulator = "Android9";
         String serverURL = "http://127.0.0.1:4723/wd/hub";
 
+
         DesiredCapabilities cap = new DesiredCapabilities();
-        cap.setCapability(MobileCapabilityType.DEVICE_NAME , emulator);
+        if(device.equals("emulator")){
+            cap.setCapability(MobileCapabilityType.DEVICE_NAME , "Android9");
+        } else if(device.equals("real")){
+            cap.setCapability(MobileCapabilityType.DEVICE_NAME , "Android device");
+        }
+
         cap.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
         cap.setCapability(MobileCapabilityType.APP, fs.getAbsolutePath());
         AndroidDriver<AndroidElement> driver = new AndroidDriver(new URL(serverURL), cap);
