@@ -7,7 +7,7 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class Base_ecomerce {
+public class Base_generalstore {
     public static AndroidDriver<AndroidElement> Capabilities() throws MalformedURLException {
         File f =new File("src");
         File fs = new File(f,"General-Store.apk");
