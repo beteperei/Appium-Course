@@ -1,13 +1,15 @@
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import org.junit.Test;
+import org.openqa.selenium.By;
+import org.testng.Assert;
 
 import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
 public class GeneralStore_TestCase03 extends Base_generalstore {
     @Test
-    public static void main(String[] args) throws MalformedURLException {
+    public static void main(String[] args) throws MalformedURLException, InterruptedException {
         AndroidDriver<AndroidElement> driver = Capabilities();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
@@ -31,6 +33,11 @@ public class GeneralStore_TestCase03 extends Base_generalstore {
         }
 
         driver.findElementById("com.androidsample.generalstore:id/appbar_btn_cart").click();
+        Thread.sleep(4000);
+
+        String lastpagetext = driver.findElement(By.id("com.androidsample.generalstore:id/productName")).getText();
+        Assert.assertEquals("Jordan 6 Rings",lastpagetext);
+
     }
 
 }
