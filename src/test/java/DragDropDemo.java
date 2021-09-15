@@ -12,7 +12,7 @@ import static io.appium.java_client.touch.offset.ElementOption.element;
 
 public class DragDropDemo extends Base {
     public static void main(String[] args) throws MalformedURLException {
-        AndroidDriver<AndroidElement> driver = Capabilities("real");
+        AndroidDriver<AndroidElement> driver = Capabilities("emulator");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         driver.findElementByAndroidUIAutomator("text(\"Views\")").click();

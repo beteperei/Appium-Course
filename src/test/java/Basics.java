@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Basics extends Base{
     public static void main(String[] args) throws MalformedURLException{
-      AndroidDriver<AndroidElement> driver = Capabilities("real");
+      AndroidDriver<AndroidElement> driver = Capabilities("emulator");
       driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         //xpath syntax tagName[@attribute='value']
 

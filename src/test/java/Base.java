@@ -17,9 +17,9 @@ public class Base {
 
         DesiredCapabilities cap = new DesiredCapabilities();
         if(device.equals("emulator")){
-            cap.setCapability(MobileCapabilityType.DEVICE_NAME , "Android9");
+            cap.setCapability(MobileCapabilityType.DEVICE_NAME , "Android12");
         } else if(device.equals("real")){
-            cap.setCapability(MobileCapabilityType.DEVICE_NAME , "Android device");
+           cap.setCapability(MobileCapabilityType.DEVICE_NAME , "Android device");
         }
 
         cap.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
@@ -29,6 +29,5 @@ public class Base {
     }
 
 
-
-
+    
 }
